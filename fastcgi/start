@@ -1,0 +1,8 @@
+#!/usr/bin/env sh
+
+app_dir=`dirname $0`
+pushd $app_dir >/dev/null
+app_dir=`pwd -P`
+popd > /dev/null
+
+spawn-fcgi -u exudong -g exudong -a 127.0.0.1 -p 8008 -- $app_dir/ding_server.py
