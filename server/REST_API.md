@@ -5,7 +5,7 @@
 ## Get all dingke
 Request:
 
-	GET /dingke?user_id=all
+	GET /all_dingke
 
 Response:
 
@@ -17,7 +17,7 @@ Response:
 
 Request:
 
-	GET /dingke?user_id=<user id>
+	GET /my_dingke/<user_id>
 
 Response:
 
@@ -28,7 +28,7 @@ Response:
 
 Request:
 
-	GET /summary?type=list&date=<epoch_time>
+	GET /summary/<yyyymmdd>
 
 Response:
 
@@ -39,7 +39,7 @@ Response:
 
 Request:
 
-	GET /summary?type=user
+	GET /summary/<user_id>
 
 Response:
 
@@ -60,20 +60,23 @@ Response:
 
 Request
 
-	POST /dingke?user_id=<user_id>
-	post-data
-	# key
-	keys=3,	5
+	POST /my_dingke/<user_id>/<key>
 
 Response
 	
-	# redirect to GET /dingke?user_id=<user id>
+	# redirect to GET /dingke/<user_id>
+
+## Delete my dingke
+
+Request
+
+	DELETE /my_dingke/<user_id>/<key>
 
 ## Submit dingke of today
 
 Request
 
-	POST /kingke_progress?user_id=<user_id>
+	POST /kingke_progress/<user_id>
 	post-data
 	date=<epoch time>
 	p1=<key>,<count>
